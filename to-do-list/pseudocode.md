@@ -83,3 +83,18 @@ Question: How in the world do I do that? Justin suggested using the epoch or a t
 
 
 ## Object-Oriented Programming
+```
+Object toDoItem = {
+label:text
+status: //likely an integer since there are multiple states. I was hoping it would be easy and say boolean. The states are active,completed,archived or deleted
+// is the ID immutable with the method?
+}
+Object toDoListId{
+ID:[ ] // based on decided Uniqued Id methods i choose(UUID)
+}
+// do we want to change order of items by click and drag with the UUID method we have?
+```
+
+## Thinking in React
+0
+```
