@@ -46,18 +46,40 @@ After the thing is loaded
 ```
 function createItem()
 {
-   - when input is put inside the input space, it is held and creates the output as a new item
-   - invoke the makeUnique function
+   - when input is put inside the input space, it is held and creates the output as a new item, press enter to finish the input
+   - when enter key is pressed, invoke the makeUnique function
 }
 
-
+function readandUpdate{
+after id is made within the array, update the dom in the correct order based on time of creation
+}
 
 function makeUnique()
 {
     when item is created, assign a number based on a sequence that is completely unique
     move the id into an array tracking all the id's of the items
 }
+function addTask()
+{
+when a button is pressed, adds the input prompt for the createItem function to be invoked later if there isn't one already
+}
+function softDeleteItem
+{
+if the task state is complete, remove it from the list, BUT KEEP ITS ID
+
+}
+
+function completeItem(){
+upon eventlisten, if task is not complete, make complete. if complete, undo the state to not-complete
+}
+function remainingItems()
+{
+return all items that are not complete
+}
 ``` 
 Question: How in the world do I do that? Justin suggested using the epoch or a timestamp to catch when it was posted
 // Date.now in js could be an option 
 //https://dev.to/rahmanfadhil/how-to-generate-unique-id-in-javascript-1b13
+
+
+## Object-Oriented Programming
