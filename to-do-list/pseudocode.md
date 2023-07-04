@@ -96,5 +96,6 @@ ID:[ ] // based on decided Uniqued Id methods i choose(UUID)
 ```
 
 ## Thinking in React
-0
-```
+Components
+Index.js
+RenderList.js
