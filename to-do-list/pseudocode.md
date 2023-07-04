@@ -96,6 +96,21 @@ ID:[ ] // based on decided Uniqued Id methods i choose(UUID)
 ```
 
 ## Thinking in React
-Components
-Index.js
-RenderList.js
+### Components
+* Index.js
+  - responsibility of displaying the items
+* RenderList.js
+  Question: What handles the responsibility of holding the array of items. is that in local storage? MAYBE. Are the unique ID's in local storage? YES
+  - responsibility of filtering and updating the DOM and 
+* CreateItem component
+  - function to make the unique ID if it is a todo item
+    
+* ToDoItem component.
+  - Is it a body div inside the project?
+ 
+* Footer.js
+  - responsible for switching the views. all, active, completed.
+ 
+Setting State
+
+
