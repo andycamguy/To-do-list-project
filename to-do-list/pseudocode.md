@@ -96,33 +96,95 @@ Question: How in the world do I do that? Justin suggested using the epoch or a t
 ```
 Object toDoListId = {
  toDoItem : {
-    label:text
-    status: //likely an integer since there are multiple states. I was hoping it would be easy and say boolean. The states are active,completed,archived or deleted
-    ID:[ ] // based on decided Uniqued Id methods i choose(UUID)
-    // is the ID immutable with the method?
+    label: the provided text from an input function.
+    status: The states are active,completed,archived or deleted which determines sorting of state within the object //likely an integer since there are multiple states. I was hoping it would be easy and say boolean. 
+    ID:[ ] a unique id based on the method of the fibonacci sequence that is infinite to prevent overlap in identification
+    UpdateStatus: method to change the state of status based on input button
+
 }
 
 
 }
-// do we want to change order of items by click and drag with the UUID method we have?
+// thought for later: do we want to change order of items by click and drag with the UUID method we have?
 ```
 
 ## Thinking in React
 
 ### Components
+- App Componenet 
+ - primary responsibility of holding everything together, displaying the items, local storage will hold the ID of the todo items and their states
 
-- Index.js
-  - responsibility of displaying the items
-- RenderList.js
-  Question: What handles the responsibility of holding the array of items. is that in local storage? MAYBE. Are the unique ID's in local storage? YES
-  - responsibility of filtering and updating the DOM and
-- CreateItem component
-  - function to make the unique ID if it is a todo item
+
+- ToDo List Component 
+  - receives the todo item components as props and renders them (reminder that a component can only return one element at a time so you have to wrap them to trick React as not an element but children with their properties aka props)
+
+
 - ToDoItem component.
+ - This component represents an individual todo item.
+ - It receives the todo item's properties (id, label, status) as props.
+ - It includes the necessary UI elements (checkbox, label text, delete button) to interact with the todo item.
+ - It communicates with the App component to update the todo item's status  or delete it.
 
-  - Is it a body div inside the project?
 
-- Footer.js
+- Footer Component
   - responsible for switching the views. all, active, completed.
+  - This component provides options to filter the displayed todo items  based on their status (all, active, completed, archived).
+  -It includes buttons or links to switch between the different filter options.
+  - It communicates with the App component to update the current filter and display the appropriate todo items.
 
-Setting State
+
+# Flowchart of React 
+**This is Declarative Programming, not Imperative programming
+**Declarative Programming means you have an understanding of what you want. **React's job is to run the steps to render what you want and give the necessary errors
+** Imperative is describing the steps on how to make the sandwich
+             App
+               |
+               |
+             TodoList
+               |
+               |
+        |---  --|--  --|
+        Item   Item   Item
+
+
+## Asking ChatGPt for insight on oop
+Note: I take this at face value. I likely won't use all of it. Just parts that make sense 
+TodoItem object:
+
+Properties:
+id: A unique identifier for the todo item.
+label: The label or text content of the todo item. // do I really need that though?
+status: The current status of the todo item (e.g., "active," "completed," "archived," or "deleted").
+Methods:
+updateLabel(newLabel): Updates the label of the todo item with a new value.
+updateStatus(newStatus): Updates the status of the todo item with a new value.
+
+## Asking ChatGpt for thinking in React
+Note: will very much likely change the pseudocode as will be seen from prior commits
+
+App Component:
+
+This is the main component that serves as the entry point of the application.
+It can hold the state for the todo list items and manage their creation, deletion, and status updates.
+It renders the TodoList component and passes the necessary props.
+
+TodoList Component:
+This component receives the list of todo items as props and renders each TodoItem component.
+It can also include a filtering mechanism to display only specific categories (e.g., all, active, completed, archived).
+It renders the TodoItem components and the Footer component.
+
+TodoItem Component:
+
+This component represents an individual todo item.
+It receives the todo item's properties (id, label, status) as props.
+It includes the necessary UI elements (checkbox, label text, delete button) to interact with the todo item.
+It communicates with the App component to update the todo item's status or delete it.
+
+Footer Component:
+
+This component provides options to filter the displayed todo items based on their status (all, active, completed, archived).
+It includes buttons or links to switch between the different filter options.
+It communicates with the App component to update the current filter and display the appropriate todo items.
+
+
+
